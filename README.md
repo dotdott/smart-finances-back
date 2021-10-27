@@ -1,28 +1,31 @@
-# Adonis API application
+<h2>Smart Finances back-end (Em andamento...)</h2>
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+<h1>DOC</h1>
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+`route: https://smart-finances-ad.herokuapp.com/`
 
-## Setup
+- Autenticação
 
-Use the adonis command to install the blueprint
+`prefix: /auth`
 
-```bash
-adonis new yardstick --api-only
+```
+~ LOGIN
+Path: /auth/login
+Type: GET
+
+PARAMS:
+Email: example@gmail.com
+Password: password123
 ```
 
-or manually clone the repo and then run `npm install`.
+```
+~ REGISTER
 
+Path: /auth/register
+Type: POST
 
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
+BODY:
+Username: myuser123
+Email: example@gmail.com
+Password: password123
 ```
