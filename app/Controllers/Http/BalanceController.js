@@ -46,12 +46,31 @@ class BalanceController {
         },
       ];
 
+      // so i dont have to hardcore every value
+      // to push the balance in the correct month
+      const monthValues = [
+        { name: "january", value: 1 },
+        { name: "february", value: 2 },
+        { name: "march", value: 3 },
+        { name: "april", value: 4 },
+        { name: "may", value: 5 },
+        { name: "june", value: 6 },
+        { name: "july", value: 7 },
+        { name: "august", value: 8 },
+        { name: "september", value: 9 },
+        { name: "october", value: 10 },
+        { name: "november", value: 11 },
+        { name: "december", value: 12 },
+      ];
+
       balanceArray.map((balance) => {
         const month = Number(balance.month);
 
-        if (month === 10) {
-          return formattedArray[0].october.push(balance);
-        }
+        monthValues.map((value) => {
+          if (value.value === month) {
+            return formattedArray[0][value.name].push(balance);
+          }
+        });
       });
 
       return formattedArray;
